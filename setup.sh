@@ -23,9 +23,9 @@ if command -v mpv >/dev/null 2>&1; then
 
    echo ">>> 安装 VapourSynth 依赖 k7sfunc ..."
    if command -v pip >/dev/null 2>&1; then
-       pip install -U k7sfunc
+       pip install -U -user k7sfunc
    elif command -v pip3 >/dev/null 2>&1; then
-       pip3 install -U k7sfunc
+       pip3 install -U -user k7sfunc
    else
        echo "警告：未找到 pip，请手动安装 k7sfunc：pip install -U k7sfunc"
    fi
