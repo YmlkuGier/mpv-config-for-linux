@@ -2,6 +2,18 @@
 ### 文档_ https://github.com/hooke007/mpv_PlayKit/discussions/329
 ### 参数_ https://github.com/hooke007/mpv_PlayKit/wiki/3_K7sfunc#uai_dml
 
+# 自动获取 Python 版本号
+py_ver = f"{sys.version_info.major}.{sys.version_info.minor}"
+
+# 构建虚拟环境路径
+venv_path = os.path.expanduser(f"~/.config/mpv/venv/lib/python{py_ver}/site-packages")
+
+# 添加到 sys.path
+if os.path.exists(venv_path):
+    sys.path.insert(0, venv_path)
+else:
+    print(f"⚠️ 虚拟环境路径不存在: {venv_path}")
+
 import vapoursynth as vs
 from vapoursynth import core
 import k7sfunc as k7f
