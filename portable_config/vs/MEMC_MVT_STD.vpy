@@ -27,16 +27,22 @@ clip = video_in
 ############
 
 H_Pre = 1440
-Recal = True
+Qty_Lv = 3
 Block = True
+BlkSize = 8
+ThSCD1 = 360
+ThSCD2 = 80
 Lk_Fmt = False
 ## 整数，预降低处理源高度（填你的显示器高度）
-## <True|False> 是否使用二次分析
+## <1|2|3> 质量等级
 ## <True|False> 是否使用Block模式
+## <4|8|16|32> 块大小
+## <0-1024> 场景检测阈值1
+## <0-1024> 场景检测阈值2
 ## <True|False> 锁定像素格式为yuv420p8
 
 ret = k7f.FPS_CTRL(clip, fps_in=container_fps, fps_ret=True)
 clip = k7f.FMT_CTRL(clip, h_max=H_Pre, fmt_pix=1 if Lk_Fmt else 0)
-clip = k7f.MVT_STD(clip, fps_in=container_fps, fps_out=container_fps*2, recal=Recal, block=Block)
+clip = k7f.MVT_MQ(clip, fps_in=container_fps, fps_out=container_fps*2, qty_lv=Qty_Lv, block=Block, blksize=BlkSize, thscd1=ThSCD1, thscd2=ThSCD2)
 
 clip.set_output()
