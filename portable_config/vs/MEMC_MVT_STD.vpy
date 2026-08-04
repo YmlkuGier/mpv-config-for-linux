@@ -1,5 +1,5 @@
 ### https://github.com/hooke007/mpv_PlayKit/wiki/3_K7sfunc
-### mvtools倍帧，标准开销
+### mvtools倍帧，较大开销
 
 import os
 import sys
