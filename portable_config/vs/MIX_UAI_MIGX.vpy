@@ -2,6 +2,9 @@
 ### 文档_ https://github.com/hooke007/mpv_PlayKit/discussions/329
 ### 参数_ https://github.com/hooke007/mpv_PlayKit/wiki/3_K7sfunc#uai_migx
 
+import os
+import sys
+
 # 自动获取 Python 版本号
 py_ver = f"{sys.version_info.major}.{sys.version_info.minor}"
 

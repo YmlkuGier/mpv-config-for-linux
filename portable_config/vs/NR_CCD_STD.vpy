@@ -1,6 +1,9 @@
 ### https://github.com/hooke007/mpv_PlayKit/wiki/3_K7sfunc
 ### 降低彩噪，开销中等
 
+import os
+import sys
+
 # 自动获取 Python 版本号
 py_ver = f"{sys.version_info.major}.{sys.version_info.minor}"
 
